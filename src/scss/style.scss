@@ -1,0 +1,48 @@
+
+// style.scss
+
+// Importer variabler
+@import "variables";
+
+// Navbar
+.navbar {
+    background-color: $navbar-background-color;
+
+    .navbar-nav .nav-link {
+        color: $navbar-text-color; 
+        font-family: $navbar-font-family; // Bruke font fra variabel
+        font-size: 18px;
+
+        &:hover {
+            color: $navbar-text-color; // Endre farge ved hover
+            text-decoration: underline; // Legg til understrek ved hover (valgfritt)
+        }
+
+        &.active {
+            font-weight: bold; // Gjør teksten tykkere for den aktive lenken
+        }
+    }
+}
+
+
+.navbar-brand {
+    color: $navbar-text-color; // Sett farge for navbar-brand
+    font-family: $navbar-font-family;
+    font-size: 22px;
+}
+
+.navbar-nav .nav-link {
+    font-family: $primary-font; // Bruke primær font
+}
+
+
+
+// Footer
+footer {
+    background-color: $footer-background-color;
+    color: $footer-text-color;
+
+    a {
+        color: $footer-text-color; // Farge for linker i footeren
+    }
+}
