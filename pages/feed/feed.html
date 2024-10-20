@@ -7,6 +7,8 @@
      <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
      <link rel="stylesheet" href="../../dist/css/style.css"> 
+     <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -42,34 +44,105 @@
                 <option value="3">Most Popular</option>
             </select>
         </div>
+
+        <!-- Profilkomponent i en firkantet boks -->
+<div class="container mb-4">
+    <div class="card">
+        <div class="card-body d-flex align-items-center">
+            <img src="/images/profile_feed.jpg" alt="Profile Picture" class="rounded-circle me-3 img-fluid profile-picture">
+            <div>
+                <h5 class="mb-2">Julie Evans</h5>
+                <p class="mb-2"><span class="text-dark">Følgere:</span> <span class="text-dark fw-bold" id="follower-count">123</span></p>
+                <p class="mb-2"><span class="text-dark">Følger:</span> <span class="text-dark fw-bold" id="following-count">45</span></p>
+                <p>I am a passionate yoga enthusiast dedicated to sharing tips and videos to inspire others in the yoga community.</p>
+                <!-- Follow-knappen rett under bio-teksten, venstrejustert -->
+                <button class="btn cta-profile">Follow</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     
         <h4 class="mb-4">Your Title Here</h4>
         <div class="list-group">
             <!-- Activity Item 1 -->
-            <div class="list-group-item d-flex align-items-start">
-                <img src="/Images/image1.jpg" class="me-3 mt-2 mb-2" alt="Description of image 1" width="100" height="100" style="border-radius: 0;">
+            <div class="list-group-item d-flex flex-column flex-md-row align-items-start">
+                <img src="/images/feed11.jpg" class="img-fluid me-3 mt-2 mb-2 image-size" alt="Description of image 3">
                 <div>
-                    <h5 class="mb-1 mt-2">Title for Activity 1</h5>
-                    <p class="mb-1">Description for activity 1 goes here.</p>
+                    <h5 class="mb-1 mt-2">Sun Salutation</h5>
+                    <p class="mb-1">A dynamic sequence that warms up the body. Start in Mountain Pose, flow through Forward 
+                        Bend, Plank, Cobra, and Downward Dog. This sequence energizes and enhances flexibility.</p>
                     <small class="text-muted">Date Here</small>
+                    <div class="mt-2">
+                        <small class="text-muted">
+                            <i class="bi bi-hand-thumbs-up me-1"></i> Likes: 64
+                        </small>
+                        <small class="text-muted ms-3">
+                            <a href="/pages/post/post-detail.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chat-dots me-1"></i> Comments: 6
+                            </a>
+                        </small>
+                    </div>
                 </div>
             </div>
             <!-- Activity Item 2 -->
-            <div class="list-group-item d-flex align-items-start">
-                <img src="/Images/image2.jpg" class="me-3 mt-2 mb-2" alt="Description of image 2" width="100" height="100" style="border-radius: 0;">
+            <div class="list-group-item d-flex flex-column flex-md-row align-items-start">
+                <img src="/images/feed22.jpg" class="img-fluid me-3 mt-2 mb-2 image-size" alt="Description of image 3">
                 <div>
-                    <h5 class="mb-1 mt-2">Title for Activity 2</h5>
-                    <p class="mb-1">Description for activity 2 goes here.</p>
+                    <h5 class="mb-1 mt-2">Warrior II </h5>
+                    <p class="mb-1">Stand with feet wide, bend the front knee, and extend arms parallel to the ground. 
+                        Gaze over your front hand. This pose builds strength and stability while opening the hips and chest.</p>
                     <small class="text-muted">Date Here</small>
+                    <div class="mt-2">
+                        <small class="text-muted">
+                            <i class="bi bi-hand-thumbs-up me-1"></i> Likes: 64
+                        </small>
+                        <small class="text-muted ms-3">
+                            <a href="/pages/post/post-detail.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chat-dots me-1"></i> Comments: 6
+                            </a>
+                        </small>
+                    </div>
                 </div>
             </div>
             <!-- Activity Item 3 -->
-            <div class="list-group-item d-flex align-items-start">
-                <img src="/Images/image3.jpg" class="me-3 mt-2 mb-2" alt="Description of image 3" width="100" height="100" style="border-radius: 0;">
+            <div class="list-group-item d-flex flex-column flex-md-row align-items-start">
+                <img src="/images/feed3.jpg" class="img-fluid me-3 mt-2 mb-2 image-size" alt="Description of image 3">
                 <div>
-                    <h5 class="mb-1 mt-2">Title for Activity 3</h5>
-                    <p class="mb-1">Description for activity 3 goes here.</p>
+                    <h5 class="mb-1 mt-2">Child's Pose</h5>
+                    <p class="mb-1">A restful position that encourages relaxation. Kneel with toes together, 
+                        sit on your heels, and lean forward, resting your forehead on the mat. This pose calms the mind and stretches the back.</p>
                     <small class="text-muted">Date Here</small>
+                    <div class="mt-2">
+                        <small class="text-muted">
+                            <i class="bi bi-hand-thumbs-up me-1"></i> Likes: 64
+                        </small>
+                        <small class="text-muted ms-3">
+                            <a href="/pages/post/post-detail.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chat-dots me-1"></i> Comments: 6
+                            </a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+             <!-- Activity Item 4 -->
+             <div class="list-group-item d-flex flex-column flex-md-row align-items-start">
+                <img src="/images/feed4.jpg" class="img-fluid me-3 mt-2 mb-2 image-size" alt="Description of image 3">
+                <div>
+                    <h5 class="mb-1 mt-2">Cobra Pose</h5>
+                    <p class="mb-1">Lie on your stomach, place hands under shoulders, and lift your chest while keeping elbows close. 
+                        This pose strengthens the back and opens the chest, improving posture.</p>
+                    <small class="text-muted">Date Here</small>
+                    <div class="mt-2">
+                        <small class="text-muted">
+                            <i class="bi bi-hand-thumbs-up me-1"></i> Likes: 64
+                        </small>
+                        <small class="text-muted ms-3">
+                            <a href="/pages/post/post-detail.html" class="text-muted text-decoration-none">
+                                <i class="bi bi-chat-dots me-1"></i> Comments: 6
+                            </a>
+                        </small>
+                    </div>
                 </div>
             </div>
         </div>

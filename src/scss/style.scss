@@ -65,6 +65,56 @@
     color: black; /* Sett tekstfargen til svart */
 }
 
+//feed.html
+.profile-picture {
+    width: 100%;           // Fyller opp 100% av bredden på sin container
+    max-width: 150px;     // Sett maksimal bredde til 100px
+    height: auto;         // Høyden tilpasser seg automatisk
+    aspect-ratio: 1;      // Sikrer at bildet holder en 1:1 forhold (rundt) 
+    object-fit: cover;     // Fyller opp plassen uten å forvrenge
+}
+
+//profile img
+.cta-profile {
+    background-color: $button-color; // Setter bakgrunnsfargen til knappen
+    color: white; // Setter teksten til hvit
+    border: none; // Fjerner kantlinjen
+    padding: 10px 20px; // Legg til padding for å gi knappen mer størrelse
+    border-radius: 5px; // Legger til avrunding på hjørnene
+    font-size: 16px; // Setter fontstørrelsen
+
+    &:hover {
+        background-color: $button-hover-color; // Endrer bakgrunnsfargen ved hover
+        color: white; // Behold teksten hvit ved hover
+    }
+}
+
+.bi-hand-thumbs-up {
+    color: $like-icon-color;
+    font-size: 1.2rem;  
+}
+
+.bi-chat-dots {
+    color: $comment-icon-color;
+    font-size: 1.2rem;  
+}
+
+
+//image feed
+
+.list-group-item {
+    display: flex;
+    align-items: center; // Justerer innholdet vertikalt
+    min-height: 100px; // Minimum høyde på kontaineren
+}
+
+.image-size {
+    width: 100px;      // Sett bredden til ønsket størrelse
+    height: auto;      // Høyden vil bli proporsjonal basert på bredden
+    border-radius: 0;  // Ingen avrunding
+    object-fit: cover;  // Fyller opp plassen uten å forvrenge
+}
+
 // Footer
 footer {
     background-color: $footer-background-color;
@@ -83,5 +133,12 @@ footer {
 
     .lead {
         font-size: 1.22rem; /* Endrer skriftstørrelse for lead */
+    }
+}
+
+// @media for 768px og nedover
+@media (max-width: 768px) {
+    .image-size {
+        width: 100%; // Tar opp 100% av bredden på små skjermer
     }
 }

@@ -53,6 +53,50 @@ html, body {
   color: black; /* Sett tekstfargen til svart */
 }
 
+.profile-picture {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.cta-profile {
+  background-color: #AC5452;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.cta-profile:hover {
+  background-color: #E0CDC6;
+  color: white;
+}
+
+.bi-hand-thumbs-up {
+  color: #AC5452;
+  font-size: 1.2rem;
+}
+
+.bi-chat-dots {
+  color: #E0CDC6;
+  font-size: 1.2rem;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  min-height: 100px;
+}
+
+.image-size {
+  width: 100px;
+  height: auto;
+  border-radius: 0;
+  object-fit: cover;
+}
+
 footer {
   background-color: #E0CDC6;
   color: #AC5452;
@@ -67,6 +111,11 @@ footer a {
   }
   .lead {
     font-size: 1.22rem; /* Endrer skriftstørrelse for lead */
+  }
+}
+@media (max-width: 768px) {
+  .image-size {
+    width: 100%;
   }
 }
 

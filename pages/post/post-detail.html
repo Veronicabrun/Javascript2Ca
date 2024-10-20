@@ -32,6 +32,66 @@
     </nav>
 
     <!-- Innholdet her kan være tomt eller med plassholder for testing -->
+    <div class="container mt-4 mb-5">
+        <div class="card">
+            <img src="/images/.jpg" class="card-img-top" alt="Post Image"> <!-- Legg inn riktig bilde-URL -->
+            <div class="card-body">
+                <h2 class="card-title mb-3">Post Title Here</h2>
+                <h6 class="text-muted">Posted by Julie Evans | Date Here</h6>
+                <p class="card-text mt-3">This is where the content of the post will go. You can provide detailed insights, tips, or experiences related to yoga.</p>
+                
+                <h5 class="mt-4">Comments</h5>
+                <div id="comments-section" class="mb-3">
+                    <div class="comment mb-2">
+                        <strong>User Name</strong>: This is a comment on the post.
+                    </div>
+                    <!-- More comments can be dynamically added here -->
+                </div>
+    
+                <h5 class="mt-4">Add a Comment</h5>
+                <form id="comment-form" class="d-flex">
+                    <div class="mb-3 me-2 flex-grow-1">
+                        <label for="comment" class="form-label">Your Comment</label>
+                        <textarea class="form-control" id="comment" rows="3" required></textarea>
+                    </div>  
+                </form>
+                
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">Post Comment</button>
+                    <button class="btn btn-warning" id="edit-post-button" data-bs-toggle="modal" data-bs-target="#editPostModal">Edit Post</button>
+                    <button class="btn btn-danger" id="delete-post-button">Delete Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for Editing Post -->
+    <div class="modal fade" id="editPostModal" tabindex="-1" aria-labelledby="editPostModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editPostModalLabel">Edit Post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-post-form">
+                        <div class="mb-3">
+                            <label for="edit-post-title" class="form-label">Post Title</label>
+                            <input type="text" class="form-control" id="edit-post-title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-post-content" class="form-label">Post Content</label>
+                            <textarea class="form-control" id="edit-post-content" rows="5" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="save-post-button">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="text-center text-lg-start mt-5 py-5">
