@@ -4,6 +4,8 @@
 // Importer variabler
 @import "variables";
 
+@import "mixins.scss";
+
 // Navbar
 .navbar {
     background-color: $navbar-background-color;
@@ -100,7 +102,7 @@
 }
 
 
-//image feed
+//images feed
 
 .list-group-item {
     display: flex;
@@ -114,6 +116,32 @@
     border-radius: 0;  // Ingen avrunding
     object-fit: cover;  // Fyller opp plassen uten å forvrenge
 }
+
+
+//post-detail.html
+.post-image {
+    width: 100%;              /* Bildet fyller 100% av sin container */
+    max-width: 515px;         /* Sett en maks bredde for bildet */
+    height: auto;             /* Høyden tilpasser seg automatisk */
+    padding: 20px;            /* Legg til padding for å skape avstand */
+    box-sizing: border-box;   /* Inkluder padding i total bredde */
+}
+
+/* Styling for Post Comment-knappen */
+.custom-comment-btn {
+    @include button-styling($comment-btn-color, $comment-btn-hover-color);
+}
+
+/* Styling for Edit Post-knappen */
+.custom-edit-btn {
+    @include button-styling($edit-btn-color, $edit-btn-hover-color);
+}
+
+/* Styling for Delete Post-knappen */
+.custom-delete-btn {
+    @include button-styling($delete-btn-color, $delete-btn-hover-color);
+}
+
 
 // Footer
 footer {
@@ -142,3 +170,4 @@ footer {
         width: 100%; // Tar opp 100% av bredden på små skjermer
     }
 }
+

@@ -10,5 +10,15 @@ $heading-font-weight: 600;                     // Vekt for overskrifter kan tas 
 $login-color: #AC5452;
 $like-icon-color: #AC5452; 
 $comment-icon-color: #E0CDC6; 
-$button-color: #AC5452; // Endre til ønsket fargekode for knappen
+$button-color: #AC5452; 
 $button-hover-color: #E0CDC6;
+
+/* Variabler for farger */
+$comment-btn-color: #E0CDC6;           
+$edit-btn-color: #C9B8B2;              
+$delete-btn-color: #AC5452;            
+
+/* Hover-farger */
+$comment-btn-hover-color: darken($comment-btn-color, 10%);  
+$edit-btn-hover-color: darken($edit-btn-color, 10%);        
+$delete-btn-hover-color: darken($delete-btn-color, 10%);    

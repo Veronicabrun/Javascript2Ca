@@ -1,0 +1,9 @@
+@mixin button-styling($bg-color, $hover-color) {
+    border: none;                      /* Fjern kant */
+    color: white;                     /* Hvit tekst */
+    background-color: $bg-color;      /* Bakgrunnsfarge */
+    
+    &:hover {
+        background-color: $hover-color; /* Mørkere farge på hover */
+    }
+}

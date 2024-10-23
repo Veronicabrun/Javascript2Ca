@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* Variabler for farger */
+/* Hover-farger */
 .navbar {
   background-color: #E0CDC6;
 }
@@ -95,6 +97,44 @@ html, body {
   height: auto;
   border-radius: 0;
   object-fit: cover;
+}
+
+.post-image {
+  width: 100%; /* Bildet fyller 100% av sin container */
+  max-width: 515px; /* Sett en maks bredde for bildet */
+  height: auto; /* Høyden tilpasser seg automatisk */
+  padding: 20px; /* Legg til padding for å skape avstand */
+  box-sizing: border-box; /* Inkluder padding i total bredde */
+}
+
+/* Styling for Post Comment-knappen */
+.custom-comment-btn {
+  border: none; /* Fjern kant */
+  color: white; /* Hvit tekst */
+  background-color: #E0CDC6; /* Bakgrunnsfarge */
+}
+.custom-comment-btn:hover {
+  background-color: rgb(206.0340909091, 176.0227272727, 164.9659090909); /* Mørkere farge på hover */
+}
+
+/* Styling for Edit Post-knappen */
+.custom-edit-btn {
+  border: none; /* Fjern kant */
+  color: white; /* Hvit tekst */
+  background-color: #C9B8B2; /* Bakgrunnsfarge */
+}
+.custom-edit-btn:hover {
+  background-color: rgb(179.9770992366, 156.358778626, 148.0229007634); /* Mørkere farge på hover */
+}
+
+/* Styling for Delete Post-knappen */
+.custom-delete-btn {
+  border: none; /* Fjern kant */
+  color: white; /* Hvit tekst */
+  background-color: #AC5452; /* Bakgrunnsfarge */
+}
+.custom-delete-btn:hover {
+  background-color: rgb(137.4645669291, 67.1338582677, 65.5354330709); /* Mørkere farge på hover */
 }
 
 footer {
