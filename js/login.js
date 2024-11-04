@@ -26,6 +26,7 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
             // Lagrer access-token i localStorage for senere bruk
             localStorage.setItem('accessToken', accessToken);
             console.log('Access Token:', accessToken); // Logger tokenen
+            console.log('Access Token lagret i localStorage:', localStorage.getItem('accessToken')); // Bekreft at tokenet er lagret
 
             document.getElementById('login-message').innerText = 'Login successful!';
             window.location.href = '/pages/feed/feed.html'; // Redirecter brukeren
