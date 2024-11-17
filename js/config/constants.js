@@ -10,4 +10,6 @@ export const REGISTER_ENDPOINT = `${API_BASE_URL}/auth/register`;
 export const LOGIN_ENDPOINT = `${API_BASE_URL}/auth/login`;
 export const CREATE_API_KEY_ENDPOINT = `${API_BASE_URL}/auth/create-api-key`;
 
-
+// Post endpoints
+export const POSTS_ENDPOINT = `${API_BASE_URL}/social/posts`;
+export const POST_BY_ID_ENDPOINT = (id) => `${API_BASE_URL}/social/posts/${id}`;

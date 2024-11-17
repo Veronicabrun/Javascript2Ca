@@ -54,7 +54,7 @@
       console.log('Token og e-post lagret i localStorage.');
 
       // Omdiriger til feed-siden
-      //window.location.href = '/pages/feed/feed.html';
+      window.location.href = '/pages/feed/feed.html';
   } catch (error) {
       console.error('Error logging in:', error);
       throw error;
