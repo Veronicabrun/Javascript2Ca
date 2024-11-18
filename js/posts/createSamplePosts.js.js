@@ -10,7 +10,7 @@ const examplePosts = [
     title: "Sun Salutation",
     body: "En yoga-sekvens som varmer opp kroppen.",
     media: {
-      url: "/images/feed11.jpg",
+     url: "/images/feed11.jpg",
       alt: "Person practicing Sun Salutation yoga pose.",
     },
     tags: ["yoga", "fitness"],
@@ -19,7 +19,7 @@ const examplePosts = [
     title: "Warrior Pose",
     body: "Styrker bena og åpner hoftene.",
     media: {
-      url: "https://example.com/warrior-pose.jpg",
+      url: "/images/feed22.jpg",
       alt: "Person practicing Warrior Pose yoga pose.",
     },
     tags: ["yoga", "strength"],

@@ -29,7 +29,8 @@ export async function createPost(postData) {
     });
 
     if (!response.ok) {
-      throw new Error('Feil ved oppretting av innlegg.');
+      const errorMessage = await response.json();
+      throw new Error(`Feil ved oppretting av innlegg: ${errorMessage.message}`);
     }
 
     return await response.json();
