@@ -41,17 +41,19 @@
 
       // Hent token fra responsen (nå fra responseData.data.accessToken)
       const token = responseData.data?.accessToken; // Navigerer inne i `data`-objektet
+      const username = responseData.data?.name; // Brukernavn, slette denne linjen?
       if (!token) {
           throw new Error('Mottok ikke token fra API');
       }
 
       console.log('Innlogging vellykket! Mottatt token:', token);
 
-      // Lagre token og e-post i localStorage
+      // Lagre token, brukernavn og e-post i localStorage
       storeInLocalStorage('accessToken', token);
       storeInLocalStorage('userEmail', email);
+      storeInLocalStorage('username', username); //slette dennne?
 
-      console.log('Token og e-post lagret i localStorage.');
+      console.log('Token, brukernavn og e-post lagret i localStorage.');
 
       // Omdiriger til feed-siden
       window.location.href = '/pages/feed/feed.html';
