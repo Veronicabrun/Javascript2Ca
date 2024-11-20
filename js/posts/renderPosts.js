@@ -1,5 +1,3 @@
-// Viser innlegg på feed.html
-// js/posts/renderPosts.js
 import { getPosts } from './getPosts.js';
 
 /**
@@ -7,10 +5,10 @@ import { getPosts } from './getPosts.js';
  */
 async function renderPosts() {
   const postsContainer = document.querySelector('.list-group');
-  postsContainer.innerHTML = ''; // Tømmer containeren før nye innlegg vises.
+  postsContainer.innerHTML = '';
 
   try {
-    const posts = await getPosts(); // Henter innlegg fra API-et.
+    const posts = await getPosts();
     posts.forEach((post) => {
       const postHTML = `
         <div class="list-group-item d-flex flex-column flex-md-row align-items-start">
@@ -29,7 +27,7 @@ async function renderPosts() {
   }
 }
 
-// Kaller funksjonen automatisk når filen lastes
 renderPosts();
+
 
 

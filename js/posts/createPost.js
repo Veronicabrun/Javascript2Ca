@@ -1,8 +1,5 @@
-// Sender ett innlegg til API
-
-// js/posts/createPost.js
 import { POSTS_ENDPOINT, API_KEY } from '../config/constants.js';
-import { retrieveFromLocalStorage } from '../utilities/localStorage.js'; // Bruker riktig funksjonsnavn
+import { retrieveFromLocalStorage } from '../utilities/localStorage.js';
 
 /**
  * Oppretter et nytt innlegg i API-et.
@@ -10,22 +7,22 @@ import { retrieveFromLocalStorage } from '../utilities/localStorage.js'; // Bruk
  * @returns {Promise<Object>} - Responsen fra API-et.
  */
 export async function createPost(postData) {
-  const token = retrieveFromLocalStorage('accessToken'); // Henter token med riktig funksjon
+  const token = retrieveFromLocalStorage('accessToken');
 
   if (!token) {
     throw new Error('Du må være innlogget for å opprette innlegg.');
   }
 
   try {
-    console.log('Sender innlegg til API:', postData); // Logger innleggsdata.
+    console.log('Sender innlegg til API:', postData);
     const response = await fetch(POSTS_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`, // Bruker token for autentisering
-        'X-Noroff-API-Key': API_KEY, // Legger til API-nøkkelen
+        'Authorization': `Bearer ${token}`,
+        'X-Noroff-API-Key': API_KEY,
       },
-      body: JSON.stringify(postData), // Konverterer til JSON-struktur
+      body: JSON.stringify(postData),
     });
 
     if (!response.ok) {
@@ -39,3 +36,5 @@ export async function createPost(postData) {
     throw error;
   }
 }
+
+
