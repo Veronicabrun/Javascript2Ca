@@ -13,6 +13,8 @@ export const CREATE_API_KEY_ENDPOINT = `${API_BASE_URL}/auth/create-api-key`;
 // Post endpoints
 export const POSTS_ENDPOINT = `${API_BASE_URL}/social/posts`;
 export const POST_BY_ID_ENDPOINT = (id) => `${API_BASE_URL}/social/posts/${id}`;
-
 export const POSTS_BY_PROFILE_ENDPOINT = (username) => `${API_BASE_URL}/social/profiles/${username}/posts`;
+
+// Search endpoint
+export const SEARCH_POSTS_ENDPOINT = (query) => `${API_BASE_URL}/social/posts/search?q=${query}`;
   

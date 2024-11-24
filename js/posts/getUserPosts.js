@@ -8,6 +8,7 @@ import { retrieveFromLocalStorage } from '../utilities/localStorage.js';
 export async function getUserPosts() {
   const token = retrieveFromLocalStorage('accessToken');
   const username = retrieveFromLocalStorage('username');
+  
 
   if (!token || !username) {
     throw new Error('Du må være innlogget for å hente innlegg.');
