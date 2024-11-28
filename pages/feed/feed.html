@@ -67,6 +67,29 @@
             </div>
         </section>
 
+        <section id="create-post-section" class="mt-5">
+            <h2>Create a New Post</h2>
+            <form id="create-post-form">
+              <div class="mb-3">
+                <label for="post-title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="post-title" placeholder="Enter post title" required>
+              </div>
+              <div class="mb-3">
+                <label for="post-body" class="form-label">Body</label>
+                <textarea class="form-control" id="post-body" rows="5" placeholder="Enter post content" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="post-media" class="form-label">Media URL (optional)</label>
+                <input type="url" class="form-control" id="post-media" placeholder="Enter media URL">
+              </div>
+              <div class="mb-3">
+                <label for="post-tags" class="form-label">Tags (comma-separated)</label>
+                <input type="text" class="form-control" id="post-tags" placeholder="Enter tags">
+              </div>
+              <button type="submit" class="btn btn-success">Create Post</button>
+            </form>
+          </section>
+
         <!-- Posts Section -->
         <section>
             <h4 class="mb-4">Latest Posts</h4>
@@ -101,6 +124,9 @@
     <script type="module" src="/js/posts/renderPosts.js"></script>
 
     <script type="module" src="/js/posts/createSamplePosts.js"></script>
+
+    <script type="module" src="/js/posts/handleCreateNewPost.js"></script>
+
     
 </body>
 </html>
