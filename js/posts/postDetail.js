@@ -1,4 +1,5 @@
 import { getPostById } from './getPostById.js';
+import { setupPostActions } from './postActions.js';
 
 // Hent eksisterende HTML-elementer
 const postTitleElement = document.querySelector('.card-title');
@@ -19,6 +20,7 @@ if (!postId) {
   console.error("Ingen post-ID spesifisert i URL-en.");
 } else {
   displayPost(postId);
+  setupPostActions(postId); // Lagt til: Initialiser oppdatering og sletting
 }
 
 async function displayPost(postId) {

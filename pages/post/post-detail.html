@@ -42,6 +42,7 @@
                 <div class="col-md-6">
                     <img src="" class="card-img post-image" alt="Post Image">
                 </div>
+                
 
                 <!-- Right Column: Title and Content -->
                 <div class="col-md-6">
@@ -49,6 +50,25 @@
                         <h2 class="card-title"></h2> <!-- Fylles med JavaScript -->
                         <h6 class="text-muted"></h6> <!-- Fylles med JavaScript -->
                         <p class="card-text mt-3"></p> <!-- Fylles med JavaScript -->
+
+                         <!-- Edit and Delete Section -->
+        <section class="mt-4">
+            <h5>Edit or Delete Post</h5>
+            <form id="edit-post-form" class="d-flex flex-column">
+                <div class="mb-3">
+                    <label for="edit-post-title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="edit-post-title" placeholder="Edit post title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="edit-post-body" class="form-label">Body</label>
+                    <textarea class="form-control" id="edit-post-body" rows="3" placeholder="Edit post content" required></textarea>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary custom-edit-btn">Update Post</button>
+                    <button type="button" class="btn btn-danger custom-delete-btn" id="delete-post-button">Delete Post</button>
+                </div>
+            </form>
+        </section>
 
                         <!-- Add a Comment Form -->
                         <section class="mt-4">
@@ -60,6 +80,8 @@
                                 </div>
                             </form>
                         </section>
+
+                        
 
                         <!-- Post Actions -->
                         <div class="mt-4">
