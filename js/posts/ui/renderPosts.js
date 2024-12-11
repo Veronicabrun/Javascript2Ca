@@ -1,5 +1,6 @@
-import { getPosts } from './getPosts.js';
+import { getPosts } from '../data/getPosts.js';
 import { handleSearchAndFilter } from './handleSearchAndFilter.js';
+import { showLoadingIndicator, hideLoadingIndicator } from './loadingIndicator.js';
 
 /**
  * Henter innlegg fra API og viser dem på siden.
@@ -10,7 +11,7 @@ export async function renderPosts(posts) {
 
   posts.forEach((post) => {
     const mediaUrl = post.media?.url || ''; // Sjekk at media-objektet finnes
-    const mediaAlt = post.media?.alt || post.title || 'Bilde'; // Fallback for alt-tekst
+    const mediaAlt = post.title || 'Bilde'; // Bruk tittel som fallback for alt-tekst
 
     const imageHTML = mediaUrl
       ? `<img src="${mediaUrl}" alt="${mediaAlt}" class="me-3 mt-2 mb-2 image-size">`
@@ -22,7 +23,7 @@ export async function renderPosts(posts) {
         <div>
           <h5 class="mb-1 mt-2">${post.title}</h5>
           <p class="mb-1">${post.body}</p>
-          <a href="/pages/post/post-detail.html?id=${post.id}" class="btn btn-primary mt-2">View Details</a>
+          <a href="/pages/post/post-detail.html?id=${post.id}" class="btn view-details-btn mt-2">View Details</a>
           <small class="text-muted">Opprettet: ${new Date(post.created).toLocaleDateString()}</small>
         </div>
       </div>

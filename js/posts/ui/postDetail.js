@@ -1,5 +1,5 @@
-import { getPostById } from './getPostById.js';
-import { setupPostActions } from './postActions.js';
+import { getPostById } from '../data/getPostById.js';
+import { setupPostActions } from '../actions/postActions.js';
 
 // Hent eksisterende HTML-elementer
 const postTitleElement = document.querySelector('.card-title');

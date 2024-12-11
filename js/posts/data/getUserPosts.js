@@ -1,5 +1,5 @@
-import { API_BASE_URL, API_KEY } from '../config/constants.js';
-import { retrieveFromLocalStorage } from '../utilities/localStorage.js';
+import { API_BASE_URL, API_KEY } from '../../config/constants.js';
+import { retrieveFromLocalStorage } from '../../utilities/localStorage.js';
 
 /**
  * Henter innleggene til den innloggede brukeren fra Noroff API.

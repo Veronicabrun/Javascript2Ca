@@ -1,6 +1,6 @@
-import { getPosts } from './getPosts.js';
-import { searchPosts } from './searchPosts.js';
-import { filterPosts } from './filterPosts.js';
+import { getPosts } from '../data/getPosts.js';
+import { searchPosts } from '../data/searchPosts.js';
+import { filterPosts } from '../data/filterPosts.js';
 import { renderPosts } from './renderPosts.js';
 
 export async function handleSearchAndFilter() {

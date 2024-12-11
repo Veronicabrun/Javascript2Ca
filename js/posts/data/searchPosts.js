@@ -1,5 +1,5 @@
-import { SEARCH_POSTS_ENDPOINT, API_KEY } from '../config/constants.js';
-import { retrieveFromLocalStorage } from '../utilities/localStorage.js';
+import { SEARCH_POSTS_ENDPOINT, API_KEY } from '../../config/constants.js';
+import { retrieveFromLocalStorage } from '../../utilities/localStorage.js';
 
 export async function searchPosts(query) {
   const token = retrieveFromLocalStorage('accessToken');

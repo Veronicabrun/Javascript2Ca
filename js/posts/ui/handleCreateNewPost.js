@@ -1,4 +1,4 @@
-import { createNewPost } from './createNewPost.js';
+import { createNewPost } from '../actions/createNewPost.js';
 
 /**
  * Initialiserer skjemaet for opprettelse av innlegg.
@@ -32,7 +32,8 @@ export function setupCreateNewPostForm() {
     const postData = {
       title,
       body,
-      media: media || null, // Bruk null hvis ingen media-URL er oppgitt
+      media: media ? { url: media } : null, // Media må være et objekt hvis det er en URL
+
       tags: tags.length > 0 ? tags : [], // Bruk tom liste hvis ingen tags
     };
 

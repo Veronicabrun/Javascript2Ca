@@ -38,9 +38,11 @@
             </div>
         </nav>
     </header>
+    
+    
 
     <!-- Main Content -->
-    <main class="container">
+    <main class="container-lg py-4">
         <!-- Search and Sort Section -->
         <section class="d-flex justify-content-between mb-4 mt-5">
             <input type="text" id="search-input" class="form-control me-2" placeholder="Search posts">
@@ -52,7 +54,7 @@
         </section>
 
         <!-- Profile Component -->
-        <section class="container mb-4">
+        <section class="container-lg py-4">
             <div class="card">
                 <div class="card-body d-flex align-items-center">
                     <img src="/images/profile_feed.jpg" alt="Profile Picture" class="rounded-circle me-3 img-fluid profile-picture">
@@ -86,7 +88,7 @@
                 <label for="post-tags" class="form-label">Tags (comma-separated)</label>
                 <input type="text" class="form-control" id="post-tags" placeholder="Enter tags">
               </div>
-              <button type="submit" class="btn btn-success">Create Post</button>
+              <button type="submit" class="btn create-post-btn mb-4">Create Post</button>
             </form>
           </section>
 
@@ -121,11 +123,11 @@
     <!-- Logout script -->
     <script type="module" src="/js/logout/logout.js"></script>
     <!-- Render Posts script -->
-    <script type="module" src="/js/posts/renderPosts.js"></script>
+    <script type="module" src="/js/posts/ui/renderPosts.js"></script>
 
-    <script type="module" src="/js/posts/createSamplePosts.js"></script>
+    <script type="module" src="/js/posts/actions/createSamplePosts.js"></script>
 
-    <script type="module" src="/js/posts/handleCreateNewPost.js"></script>
+    <script type="module" src="/js/posts/ui/handleCreateNewPost.js"></script>
 
     
 </body>

@@ -1,5 +1,5 @@
-import { POST_BY_ID_ENDPOINT, API_KEY } from '../config/constants.js';
-import { retrieveFromLocalStorage } from '../utilities/localStorage.js';
+import { POST_BY_ID_ENDPOINT, API_KEY } from '../../config/constants.js';
+import { retrieveFromLocalStorage } from '../../utilities/localStorage.js';
 
 export async function getPostById(postId) {
   const token = retrieveFromLocalStorage('accessToken');

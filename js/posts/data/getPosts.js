@@ -1,5 +1,5 @@
-import { POSTS_ENDPOINT, API_KEY } from '../config/constants.js';
-import { retrieveFromLocalStorage } from '../utilities/localStorage.js';
+import { POSTS_ENDPOINT, API_KEY } from '../../config/constants.js';
+import { retrieveFromLocalStorage } from '../../utilities/localStorage.js';
 
 /**
  * Henter alle innlegg fra API-et.

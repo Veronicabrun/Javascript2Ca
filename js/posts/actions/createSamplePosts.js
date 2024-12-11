@@ -5,7 +5,7 @@ const examplePosts = [
     title: "Sun Salutation",
     body: "En yoga-sekvens som varmer opp kroppen.",
     media: {
-      url: "https://images.unsplash.com/photo-1731921954767-8473de81c99e?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "https://images.pexels.com/photos/4534660/pexels-photo-4534660.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       alt: "Person practicing Sun Salutation yoga pose.",
     },
     tags: ["yoga", "fitness"],
@@ -14,7 +14,7 @@ const examplePosts = [
     title: "Warrior Pose",
     body: "Styrker bena og åpner hoftene.",
     media: {
-      url: "https://images.unsplash.com/photo-1731921954767-8473de81c99e?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "https://images.pexels.com/photos/4534594/pexels-photo-4534594.jpeg",
       alt: "Person practicing Warrior Pose yoga pose.",
     },
     tags: ["yoga", "strength"],
