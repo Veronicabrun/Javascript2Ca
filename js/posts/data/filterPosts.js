@@ -1,5 +1,5 @@
 export function filterPosts(posts, sortBy) {
-    console.log("Filtrerer innlegg basert på:", sortBy); // Legg til logging for debugging
+    console.log("Filtering posts based on:", sortBy); 
     switch (sortBy) {
       case 'newest':
         return posts.sort((a, b) => new Date(b.created) - new Date(a.created));

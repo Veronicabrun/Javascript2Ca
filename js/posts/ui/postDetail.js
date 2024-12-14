@@ -1,36 +1,39 @@
 import { getPostById } from '../data/getPostById.js';
 import { setupPostActions } from '../actions/postActions.js';
+import { showLoadingIndicator, hideLoadingIndicator } from '../ui/loadingIndicator.js'; 
 
-// Hent eksisterende HTML-elementer
+// Fetch existing HTML elements
 const postTitleElement = document.querySelector('.card-title');
 const postAuthorElement = document.querySelector('.text-muted');
 const postBodyElement = document.querySelector('.card-text');
 const postImageElement = document.querySelector('.post-image');
 
-// Hent URL-parametere for å finne post-ID
+// Fetch URL parameters to find the post ID
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get('id');
 
-// Konsoll-logg for å sjekke at post-ID er hentet riktig
+// Console log to verify that the post ID is fetched correctly
 console.log("URL-parametere:", urlParams.toString());
 console.log("Hentet post-ID:", postId);
 
 if (!postId) {
-  document.querySelector('.card').innerHTML = '<p class="text-danger">Ingen post-ID spesifisert. Gå tilbake til feeden.</p>';
-  console.error("Ingen post-ID spesifisert i URL-en.");
+  document.querySelector('.card').innerHTML = '<p class="text-danger">No post ID specified. Go back to the feed.</p>';
+  console.error("No post ID specified in the URL.");
 } else {
   displayPost(postId);
-  setupPostActions(postId); // Lagt til: Initialiser oppdatering og sletting
+  setupPostActions(postId); // Added: Initialize update and delete
 }
 
 async function displayPost(postId) {
   try {
-    console.log(`Henter innlegg med ID: ${postId} fra API...`);
+    showLoadingIndicator(); 
+
+    console.log(`Fetching post with ID: ${postId} from the API...`);
     const post = (await getPostById(postId)).data;
 
-    console.log("Mottatt innlegg fra API:", post);
+    console.log("Received post from the API:", post);
 
-    // Oppdater eksisterende HTML med innleggsdata
+    // Update existing HTML with post data
     postTitleElement.textContent = post.title;
     postAuthorElement.textContent = `Posted by ${post.author?.name || 'Unknown'} | ${new Date(post.created).toLocaleDateString()}`;
     postBodyElement.textContent = post.body;
@@ -39,13 +42,15 @@ async function displayPost(postId) {
       postImageElement.src = post.media.url;
       postImageElement.alt = post.media.alt || post.title || 'Post Image';
     } else {
-      postImageElement.remove(); // Fjern bildet hvis det ikke finnes
+      postImageElement.remove();
     }
 
-    console.log("Innlegg oppdatert i eksisterende HTML.");
+    console.log("Post updated in existing HTML.");
   } catch (error) {
-    console.error("Feil ved henting av innlegg:", error);
-    document.querySelector('.card').innerHTML = '<p class="text-danger">Kunne ikke laste inn innlegget. Prøv igjen senere.</p>';
+    console.error("Error while fetching the post:", error);
+    document.querySelector('.card').innerHTML = '<p class="text-danger">Could not load the post. Please try again later</p>';
+  } finally {
+    hideLoadingIndicator(); 
   }
 }
 

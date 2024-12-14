@@ -1,8 +1,8 @@
- // Inneholder API-endepunkter og konstanter
+ // Contains API endpoints and constants
 // Base API URL
 export const API_BASE_URL = 'https://v2.api.noroff.dev';
 
-// Din unike API-nøkkel
+// Your unique API key
 export const API_KEY = '05e991e0-643b-41bd-b4a7-701ca4ae441f';
 
 // Auth endpoints

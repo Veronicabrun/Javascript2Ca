@@ -1,4 +1,4 @@
- // Håndterer lagring og henting fra localStorage
+ // Handles saving to and retrieving from localStorage
 // Save data to localStorage
 
 export function storeInLocalStorage(key, value) {

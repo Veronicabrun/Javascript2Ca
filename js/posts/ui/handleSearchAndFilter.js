@@ -7,20 +7,20 @@ export async function handleSearchAndFilter() {
   const searchInput = document.getElementById('search-input');
   const sortSelect = document.getElementById('sort-select');
 
-  // Hent brukerens input
-  const query = searchInput.value.trim(); // Søketekst
-  const sortBy = sortSelect.value; // Valgt filtreringsmetode
+  // Fetch user input
+  const query = searchInput.value.trim(); 
+  const sortBy = sortSelect.value; 
 
   try {
-    // Hent innlegg fra API (med eller uten søk)
+    // Fetch posts from the API (with or without search)
     const posts = query ? await searchPosts(query) : await getPosts();
 
-    // Filtrer innlegg basert på sorteringsmetode
+    // Filter posts based on the sorting method
     const sortedPosts = filterPosts(posts, sortBy);
 
-    // Send de filtrerte innleggene til renderPosts
-    await renderPosts(sortedPosts); // Oppdatert for å ta inn filtrerte innlegg
+    // Send the filtered posts to renderPosts
+    await renderPosts(sortedPosts); // Updated to accept filtered posts
   } catch (error) {
-    console.error('Feil ved håndtering av søk og filtrering:', error);
+    console.error('Error while handling search and filtering:', error);
   }
 }

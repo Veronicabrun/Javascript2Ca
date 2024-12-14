@@ -1,14 +1,13 @@
 import { POSTS_ENDPOINT, API_KEY } from '../../config/constants.js';
 import { retrieveFromLocalStorage } from '../../utilities/localStorage.js';
-
 /**
- * Sletter et innlegg basert på ID.
- * @param {string} postId - ID for innlegget som skal slettes.
+ * Deleting a post based on ID.
+ * @param {string} postId - ID of the post to be deleted.
  * @returns {Promise<void>}
  */
 export async function deletePost(postId) {
   const token = retrieveFromLocalStorage('accessToken');
-  if (!token) throw new Error("Du må være innlogget for å slette et innlegg.");
+  if (!token) throw new Error("You must be logged in to delete a post");
 
   const response = await fetch(`${POSTS_ENDPOINT}/${postId}`, {
     method: 'DELETE',
@@ -19,9 +18,9 @@ export async function deletePost(postId) {
   });
 
   if (!response.ok) {
-    console.error("Kunne ikke slette innlegget:", response.status);
-    throw new Error("Kunne ikke slette innlegget.");
+    console.error("Could not delete the post:", response.status);
+    throw new Error("Could not delete the post.");
   }
 
-  console.log("Innlegg slettet.");
+  console.log("Post deleted.");
 }

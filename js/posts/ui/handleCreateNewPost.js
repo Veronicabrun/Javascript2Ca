@@ -1,24 +1,23 @@
 import { createNewPost } from '../actions/createNewPost.js';
-
 /**
- * Initialiserer skjemaet for opprettelse av innlegg.
+ *Initializing the form for creating posts
  */
 export function setupCreateNewPostForm() {
-  console.log("Initialiserer skjema for opprettelse av nytt innlegg...");
+  console.log("Initializing form for creating a new post...");
 
   const form = document.getElementById('create-post-form');
 
   if (!form) {
-    console.error("Skjema for opprettelse av innlegg ble ikke funnet i HTML.");
+    console.error("Form for creating posts was not found in the HTML.");
     return;
   }
 
   form.addEventListener('submit', async (event) => {
-    event.preventDefault(); // Hindrer siden fra å laste inn på nytt
+    event.preventDefault(); 
 
-    console.log("Submit-knappen ble trykket, henter verdier fra skjemaet...");
+    console.log("The submit button was clicked, retrieving values from the form...");
 
-    // Hent verdiene fra skjemaet
+    // Get the values from the form
     const title = document.getElementById('post-title').value.trim();
     const body = document.getElementById('post-body').value.trim();
     const media = document.getElementById('post-media').value.trim();
@@ -26,40 +25,40 @@ export function setupCreateNewPostForm() {
       .split(',')
       .map(tag => tag.trim());
 
-    console.log("Hentede verdier:", { title, body, media, tags });
+    console.log("Retrieved values:", { title, body, media, tags });
 
-    // Opprett postData-objektet
+    // Create the postData object
     const postData = {
       title,
       body,
-      media: media ? { url: media } : null, // Media må være et objekt hvis det er en URL
+      media: media ? { url: media } : null, // Media must be an object if it is a URL
 
-      tags: tags.length > 0 ? tags : [], // Bruk tom liste hvis ingen tags
+      tags: tags.length > 0 ? tags : [], // Use an empty list if no tags are provided
     };
 
     try {
-      console.log("Sender innleggsdata til API:", postData);
+      console.log("Sending post data to the API:", postData);
 
-      // Send data til API for å opprette innlegg
+      // Send data to the API to create a post
       const response = await createNewPost(postData);
 
-      console.log("Respons fra API:", response);
-      alert("Innlegget ble opprettet!");
+      console.log("Response from the API:", response);
+      alert("The post was created!");
 
-      // Nullstill skjemaet
+      // Reset the form
       form.reset();
 
-      // Oppdater feeden dynamisk
-      window.location.reload(); // Alternativ: Kall `renderPosts()` for dynamisk oppdatering
+      // Update the feed dynamically
+      window.location.reload(); // Alternative: Call renderPosts() for dynamic updating
     } catch (error) {
-      console.error("Feil ved oppretting av innlegg:", error);
-      alert("Kunne ikke opprette innlegget. Prøv igjen.");
+      console.error("Error while creating the post:", error);
+      alert("Could not create the post. Please try again.");
     }
   });
 }
 
 /**
- * Initialiserer skjemaet når filen lastes.
+ * Initializing the form when the file loads.
  */
 setupCreateNewPostForm();
 

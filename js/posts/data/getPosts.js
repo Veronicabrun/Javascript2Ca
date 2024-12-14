@@ -2,14 +2,14 @@ import { POSTS_ENDPOINT, API_KEY } from '../../config/constants.js';
 import { retrieveFromLocalStorage } from '../../utilities/localStorage.js';
 
 /**
- * Henter alle innlegg fra API-et.
- * @returns {Promise<Array>} - Liste over innlegg.
+ * Fetching all posts from the API
+ * @returns {Promise<Array>} - List of posts.
  */
 export async function getPosts() {
   const token = retrieveFromLocalStorage('accessToken');
 
   if (!token) {
-    throw new Error('Du må være innlogget for å hente innlegg.');
+    throw new Error('You must be logged in to fetch posts.');
   }
 
   try {
@@ -21,13 +21,13 @@ export async function getPosts() {
     });
 
     if (!response.ok) {
-      throw new Error('Feil ved henting av innlegg.');
+      throw new Error('Error while fetching posts.');
     }
 
     const data = await response.json();
     return data.data;
   } catch (error) {
-    console.error('Feil ved henting av innlegg:', error);
+    console.error('Error while fetching posts:', error);
     throw error;
   }
 }

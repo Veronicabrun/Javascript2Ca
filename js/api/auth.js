@@ -7,55 +7,61 @@
     //}
   //};
 
- // Håndterer API-kall for login og registrering
+ // Handles API calls for login and registration
 
  import { LOGIN_ENDPOINT, REGISTER_ENDPOINT } from '../config/constants.js';
  import { storeInLocalStorage } from '../utilities/localStorage.js';
  import { API_KEY } from '../config/constants.js';
  
- /**
-  * Logger inn brukeren.
-  * @param {string} email - Brukerens e-postadresse.
-  * @param {string} password - Brukerens passord.
-  * @returns {Promise<void>}
-  */
+/**
+ * Logs in the user.
+ * @param {string} email - The user's email address.
+ * @param {string} password - The user's password.
+ * @returns {Promise<void>} 
+ * @example
+ * // Usage example:
+ * loginUser('john.doe@stud.noroff.no', 'securePassword123')
+ *     .then(() => console.log('User logged in successfully'))
+ *     .catch(error => console.error('Login error:', error));
+ */
+
  export async function loginUser(email, password) {
   try {
-      console.log('Starter innlogging for:', email);
+      console.log('Starting login for:', email);
 
       const response = await fetch(LOGIN_ENDPOINT, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
-              'X-Noroff-API-Key': API_KEY, // Legger til API-nøkkelen her
+              'X-Noroff-API-Key': API_KEY, 
           },
           body: JSON.stringify({ email, password }),
       });
 
       const responseData = await response.json();
-      console.log('Mottatt responsdata:', responseData);
+      console.log('Received response data:', responseData);
 
       if (!response.ok) {
           throw new Error(`Login failed with status ${response.status}`);
       }
 
-      // Hent token fra responsen (nå fra responseData.data.accessToken)
-      const token = responseData.data?.accessToken; // Navigerer inne i `data`-objektet
-      const username = responseData.data?.name; // Brukernavn, slette denne linjen?
+      // Retrieve token from the response (now from responseData.data.accessToken)
+      const token = responseData.data?.accessToken; // Navigating inside the data object
+      const username = responseData.data?.name; 
       if (!token) {
-          throw new Error('Mottok ikke token fra API');
+          throw new Error('Did not receive token from the API');
       }
 
-      console.log('Innlogging vellykket! Mottatt token:', token);
+      console.log('Login successful! Received token:', token);
 
-      // Lagre token, brukernavn og e-post i localStorage
+      // Save token, username, and email in localStorage
       storeInLocalStorage('accessToken', token);
       storeInLocalStorage('userEmail', email);
-      storeInLocalStorage('username', username); //slette dennne?
+      storeInLocalStorage('username', username); 
 
-      console.log('Token, brukernavn og e-post lagret i localStorage.');
+      console.log('Token, username, and email saved in localStorage.');
 
-      // Omdiriger til feed-siden
+      // Redirect to the feed page
       window.location.href = '/pages/feed/feed.html';
   } catch (error) {
       console.error('Error logging in:', error);
@@ -64,36 +70,46 @@
 }
 
 /**
- * Registrerer en ny bruker.
- * @param {Object} userData - Objekt med brukerdata for registrering.
- * @param {string} userData.name - Brukerens brukernavn.
- * @param {string} userData.email - Brukerens e-postadresse.
- * @param {string} userData.password - Brukerens passord.
- * @returns {Promise<void>}
+ * Registering a new user.
+ * @param {Object} userData - Object with user data for registration.
+ * @param {string} userData.name - The user's username.
+ * @param {string} userData.email - The user's email address.
+ * @param {string} userData.password - The user's password.
+ * @returns {Promise<void>} 
+ * @example
+ * // Usage example:
+ * registerUser({
+ *     name: 'john_doe',
+ *     email: 'john.doe@stud.noroff.no',  // Valid email with @stud.noroff.no
+ *     password: 'securePassword123'
+ * })
+ *     .then(() => console.log('User registered successfully'))
+ *     .catch(error => console.error('Registration error:', error));
  */
+
 export async function registerUser(userData) {
   try {
-      console.log('Starter registrering for:', userData.email);
+      console.log('Starting registration for:', userData.email);
 
       const response = await fetch(REGISTER_ENDPOINT, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
-              'X-Noroff-API-Key': API_KEY, // Legger til API-nøkkelen her
+              'X-Noroff-API-Key': API_KEY, 
           },
           body: JSON.stringify(userData),
       });
 
       const responseData = await response.json();
-      console.log('Mottatt responsdata:', responseData);
+      console.log('Received response data:', responseData);
 
       if (!response.ok) {
           throw new Error(`Registration failed with status ${response.status}`);
       }
 
-      console.log('Registrering vellykket! Bruker opprettet:', responseData);
+      console.log('Registration successful! User created:', responseData);
 
-      // Omdiriger til innloggingssiden etter registrering
+      // Redirect to the login page after registration
       //window.location.href = '/pages/login/login.html';
   } catch (error) {
       console.error('Error registering user:', error);

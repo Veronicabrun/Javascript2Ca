@@ -1,24 +1,21 @@
 // _variables.scss
-$navbar-background-color: #E0CDC6; // Bakgrunnsfarge for header
-$footer-background-color: #E0CDC6;  // Bakgrunnsfarge for footer
-$navbar-text-color: #AC5452;        // Tekstfarge for header
-$footer-text-color: #AC5452;        // Tekstfarge for footer
-$navbar-font-family: 'Playfair Display', serif; // Font for navbar
-$primary-font: 'Montserrat', sans-serif;        // Primær font
-$heading-font: 'Playfair Display', serif;      // Font for overskrifter kan tas vekk?
-$heading-font-weight: 600;                     // Vekt for overskrifter kan tas vekk?
-$login-color: #AC5452;
-$like-icon-color: #AC5452; 
+$navbar-background-color: #E0CDC6; 
+$footer-background-color: #E0CDC6;  
+$navbar-text-color: #8A4642;        
+$footer-text-color: #8A4642;        
+$navbar-font-family: 'Playfair Display', serif; 
+$primary-font: 'Montserrat', sans-serif;        
+$heading-font: 'Playfair Display', serif;      
+$heading-font-weight: 600;                     
+$login-color: #8A4642;
+$like-icon-color: #8A4642; 
 $comment-icon-color: #E0CDC6; 
-$button-color: #AC5452; 
+$button-color: #8A4642; 
 $button-hover-color: #E0CDC6;
-
-/* Variabler for farger */
 $comment-btn-color: #E0CDC6;           
 $edit-btn-color: #C9B8B2;              
-$delete-btn-color: #AC5452;            
-
-/* Hover-farger */
+$delete-btn-color: #8A4642;            
+/* Hover colors */
 $comment-btn-hover-color: darken($comment-btn-color, 10%);  
 $edit-btn-hover-color: darken($edit-btn-color, 10%);        
 $delete-btn-hover-color: darken($delete-btn-color, 10%);    

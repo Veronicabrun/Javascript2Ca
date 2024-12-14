@@ -2,13 +2,13 @@
 import { clearLocalStorage } from '../utilities/localStorage.js';
 
 /**
- * Logger ut brukeren ved å slette `localStorage`-data og omdirigere.
+ * Logging out the user by deleting localStorage data and redirecting
  */
 function logoutUser() {
-    console.log('Logger ut bruker...');
+    console.log('Logging out the user...');
     clearLocalStorage();
-    window.location.href = '/index.html'; // Omdirigerer til innloggingssiden
+    window.location.href = '/index.html'; 
 }
 
-// Legger til en eventlistener for logg ut-knappen
+// Adding an event listener for the logout button
 document.querySelector('#logout-button').addEventListener('click', logoutUser);

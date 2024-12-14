@@ -1,3 +1,4 @@
+//registration
 import { registerUser } from '../api/auth.js';
 
 document.querySelector('#registration-form').addEventListener('submit', async (event) => {
@@ -10,11 +11,11 @@ document.querySelector('#registration-form').addEventListener('submit', async (e
     const userData = { name, email, password };
 
     try {
-        console.log('Submit-knappen trykket. Prøver å registrere bruker...');
+        console.log('Submit button clicked. Trying to register user...');
         await registerUser(userData);
-        console.log('Registrering fullført. Brukeren er logget inn og omdirigert til feed-siden.');
+        console.log('Registration complete. The user is logged in and redirected to the feed page.');
     } catch (error) {
         document.querySelector('#error').textContent = 'Registration failed. Please check your inputs.';
-        console.error('Registrering feilet:', error);
+        console.error('Registration failed:', error);
     }
 });

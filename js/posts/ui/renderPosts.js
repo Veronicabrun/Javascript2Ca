@@ -1,28 +1,27 @@
 import { getPosts } from '../data/getPosts.js';
 import { handleSearchAndFilter } from './handleSearchAndFilter.js';
 import { showLoadingIndicator, hideLoadingIndicator } from './loadingIndicator.js';
-
 /**
- * Henter innlegg fra API og viser dem på siden.
+ * Fetches posts from the API and displays them on the page.
  */
 export async function renderPosts() {
   const postsContainer = document.querySelector('.list-group');
-  const errorContainer = document.querySelector('.error-container'); // Bruk feilmeldingscontaineren
-  errorContainer.innerHTML = ''; // Tøm feilmeldingscontaineren
+  const errorContainer = document.querySelector('.error-container'); // Use the error message container
+  errorContainer.innerHTML = ''; 
 
-  showLoadingIndicator(); // Vis spinneren
+  showLoadingIndicator(); 
 
   try {
-    console.log("Starter å hente innlegg...");
+    console.log("Starting to fetch posts...");
 
-    // Hent innlegg fra API
+    // Fetch posts from the API
     const posts = await getPosts();
-    postsContainer.innerHTML = ''; // Tøm innleggskonteineren
+    postsContainer.innerHTML = ''; 
 
-    // Gå gjennom hvert innlegg og vis det på siden
+    // Loop through each post and display it on the page
     posts.forEach((post) => {
-      const mediaUrl = post.media?.url || ''; // Sjekk at media-objektet finnes
-      const mediaAlt = post.title || 'Bilde'; // Bruk tittel som fallback for alt-tekst
+      const mediaUrl = post.media?.url || ''; // Check that the media object exists
+      const mediaAlt = post.title || 'Bilde'; // Use the title as a fallback for alt text
 
       const imageHTML = mediaUrl
         ? `<img src="${mediaUrl}" alt="${mediaAlt}" class="me-3 mt-2 mb-2 image-size">`
@@ -42,37 +41,37 @@ export async function renderPosts() {
       postsContainer.innerHTML += postHTML;
     });
 
-    // Hvis ingen innlegg er funnet
+    // If no posts are found
     if (posts.length === 0) {
-      console.warn("Ingen innlegg funnet.");
+      console.warn("No posts found.");
       const noPostsMessage = '<p class="text-danger mt-3">No posts found. Try creating one!</p>';
       errorContainer.innerHTML = noPostsMessage;
     }
   } catch (error) {
-    console.error("Feil ved lasting av innlegg:", error);
+    console.error("Error while loading posts:", error);
 
-    // Hvis det oppstår en feil, vis en melding til brukeren
+    // If an error occurs, display a message to the user
     const errorMessage = '<p class="text-danger mt-3">Failed to load posts. Please try again later.</p>';
     errorContainer.innerHTML = errorMessage;
   } finally {
-    hideLoadingIndicator(); // Skjul spinneren uansett resultat
+    hideLoadingIndicator(); 
   }
 }
 
-// Start med å vise innlegg
+// Start by displaying posts
 handleSearchAndFilter();
 
-// Event listeners for søk og filtrering
+// Event listeners for search and filtering
 document.getElementById('search-input').addEventListener('input', async () => {
   const errorContainer = document.querySelector('.error-container');
-  errorContainer.innerHTML = ''; // Tøm feilmeldingscontaineren
+  errorContainer.innerHTML = ''; 
 
   showLoadingIndicator();
   try {
-    console.log("Starter søk...");
+    console.log("Starting search...");
     await handleSearchAndFilter();
   } catch (error) {
-    console.error("Feil ved søk:", error);
+    console.error("Error during search:", error);
     const errorMessage = '<p class="text-danger mt-3">Search failed. Please try again later.</p>';
     errorContainer.innerHTML = errorMessage;
   } finally {
@@ -82,14 +81,14 @@ document.getElementById('search-input').addEventListener('input', async () => {
 
 document.getElementById('sort-select').addEventListener('change', async () => {
   const errorContainer = document.querySelector('.error-container');
-  errorContainer.innerHTML = ''; // Tøm feilmeldingscontaineren
+  errorContainer.innerHTML = ''; // Clear the error message container
 
   showLoadingIndicator();
   try {
-    console.log("Starter sortering...");
+    console.log("Starting sorting...");
     await handleSearchAndFilter();
   } catch (error) {
-    console.error("Feil ved sortering:", error);
+    console.error("Error during sorting:", error);
     const errorMessage = '<p class="text-danger mt-3">Sorting failed. Please try again later.</p>';
     errorContainer.innerHTML = errorMessage;
   } finally {

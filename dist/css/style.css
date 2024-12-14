@@ -1,6 +1,5 @@
 @charset "UTF-8";
-/* Variabler for farger */
-/* Hover-farger */
+/* Hover colors */
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -11846,33 +11845,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.navbar {
-  background-color: #E0CDC6;
-}
-.navbar .navbar-nav .nav-link {
-  color: #AC5452;
-  font-family: "Playfair Display", serif;
-  font-size: 18px;
-}
-.navbar .navbar-nav .nav-link:hover {
-  color: #AC5452;
-  text-decoration: underline;
-}
-.navbar .navbar-nav .nav-link.active {
-  font-weight: bold;
-}
-
-.navbar-brand {
-  color: #AC5452;
-  font-family: "Playfair Display", serif;
-  font-size: 22px;
-}
-
-.navbar-nav .nav-link {
-  font-family: "Montserrat", sans-serif;
-}
-
-/* Tilpasset CSS */
+/* Custom CSS */
 html, body {
   margin: 0;
   padding: 0;
@@ -11891,35 +11864,61 @@ html, body {
   height: 100%;
 }
 
+.navbar {
+  background-color: #E0CDC6;
+}
+.navbar .navbar-nav .nav-link {
+  color: #8A4642;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+}
+.navbar .navbar-nav .nav-link:hover {
+  color: #8A4642;
+  text-decoration: underline;
+}
+.navbar .navbar-nav .nav-link.active {
+  font-weight: bold;
+}
+
+.navbar-brand {
+  color: #8A4642;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+}
+
+.navbar-nav .nav-link {
+  font-family: "Montserrat", sans-serif;
+}
+
 .custom-login {
-  background-color: #AC5452;
+  background-color: #8A4642;
   color: white;
 }
 
 .custom-register {
-  background-color: transparent; /* Gjør knappen transparent */
-  border: 2px solid black; /* Legg til en svart kant */
-  color: black; /* Sett tekstfargen til svart */
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
 }
 
 .container {
-  border: 2px solid #ddd; /* Tydeligere ramme */
-  border-radius: 12px; /* Avrundede hjørner */
-  padding: 30px; /* Økt innvendig avstand */
-  background-color: #fff; /* Hvit bakgrunn */
-  max-width: 500px; /* Økt bredde */
-  width: 100%; /* Responsiv bredde */
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Større skygge */
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 30px;
+  background-color: #fff;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .registration-box {
-  border: 2px solid #ddd; /* Ramme rundt boksen */
-  border-radius: 12px; /* Avrundede hjørner */
-  padding: 30px; /* Innvendig avstand */
-  background-color: #fff; /* Hvit bakgrunn */
-  max-width: 500px; /* Maks bredde for boksen */
-  width: 100%; /* Responsiv bredde */
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Skygge for dybde */
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 30px;
+  background-color: #fff;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .profile-picture {
@@ -11931,7 +11930,7 @@ html, body {
 }
 
 .cta-profile {
-  background-color: #AC5452;
+  background-color: #8A4642;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -11944,7 +11943,7 @@ html, body {
 }
 
 .bi-hand-thumbs-up {
-  color: #AC5452;
+  color: #8A4642;
   font-size: 1.2rem;
 }
 
@@ -11955,7 +11954,7 @@ html, body {
 
 .create-post-btn,
 .view-details-btn {
-  background-color: #AC5452;
+  background-color: #8A4642;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -11989,11 +11988,11 @@ html, body {
 }
 
 .post-image {
-  width: 100%; /* Bildet fyller 100% av sin container */
-  max-width: 515px; /* Sett en maks bredde for bildet */
-  height: auto; /* Høyden tilpasser seg automatisk */
-  padding: 20px; /* Legg til padding for å skape avstand */
-  box-sizing: border-box; /* Inkluder padding i total bredde */
+  width: 100%;
+  max-width: 515px;
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Styling for Post Comment-knappen */
@@ -12020,17 +12019,19 @@ html, body {
 .custom-delete-btn {
   border: none; /* Fjern kant */
   color: white; /* Hvit tekst */
-  background-color: #AC5452; /* Bakgrunnsfarge */
+  background-color: #8A4642; /* Bakgrunnsfarge */
 }
 .custom-delete-btn:hover {
-  background-color: rgb(137.4645669291, 67.1338582677, 65.5354330709); /* Mørkere farge på hover */
+  background-color: rgb(103.5, 52.5, 49.5); /* Mørkere farge på hover */
 }
 
 .spinner-overlay {
-  position: absolute; /* Ikke dekker hele skjermen */
-  width: auto; /* Kun så stor som nødvendig */
-  height: auto; /* Kun så høy som nødvendig */
-  background-color: transparent; /* Ingen bakgrunn */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12066,10 +12067,10 @@ html, body {
 
 footer {
   background-color: #E0CDC6;
-  color: #AC5452;
+  color: #8A4642;
 }
 footer a {
-  color: #AC5452;
+  color: #8A4642;
 }
 
 @media (max-width: 1311px) {
@@ -12077,7 +12078,7 @@ footer a {
     font-size: 2.5rem;
   }
   .lead {
-    font-size: 1.22rem; /* Endrer skriftstørrelse for lead */
+    font-size: 1.22rem;
   }
 }
 @media (max-width: 768px) {

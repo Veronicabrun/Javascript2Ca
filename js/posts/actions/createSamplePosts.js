@@ -24,9 +24,9 @@ const examplePosts = [
 for (const post of examplePosts) {
   try {
     const response = await createPost(post);
-    console.log('Opprettet innlegg:', response);
+    console.log('Post created:', response);
   } catch (error) {
-    console.error('Feil ved oppretting av innlegg:', error);
+    console.error('Error while creating the post:', error);
   }
 }
 

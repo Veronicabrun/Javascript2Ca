@@ -1,44 +1,9 @@
-
-// style.scss
-
-// Importer variabler
+// Import variables
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "mixins.scss";
 
-// Navbar
-.navbar {
-    background-color: $navbar-background-color;
-
-    .navbar-nav .nav-link {
-        color: $navbar-text-color; 
-        font-family: $navbar-font-family; // Bruke font fra variabel
-        font-size: 18px;
-
-        &:hover {
-            color: $navbar-text-color; // Endre farge ved hover
-            text-decoration: underline; // Legg til understrek ved hover (valgfritt)
-        }
-
-        &.active {
-            font-weight: bold; // Gjør teksten tykkere for den aktive lenken
-        }
-    }
-}
-
-
-.navbar-brand {
-    color: $navbar-text-color; // Sett farge for navbar-brand
-    font-family: $navbar-font-family;
-    font-size: 22px;
-}
-
-.navbar-nav .nav-link {
-    font-family: $primary-font; // Bruke primær font
-}
-
- /* Tilpasset CSS */
-
+/* Custom CSS */
  html, body {
     margin: 0;
     padding: 0;
@@ -57,6 +22,38 @@
     height: 100%;
 }
 
+// Navbar
+.navbar {
+    background-color: $navbar-background-color;
+
+    .navbar-nav .nav-link {
+        color: $navbar-text-color; 
+        font-family: $navbar-font-family; 
+        font-size: 18px;
+
+        &:hover {
+            color: $navbar-text-color; 
+            text-decoration: underline; 
+        }
+
+        &.active {
+            font-weight: bold; 
+        }
+    }
+}
+
+.navbar-brand {
+    color: $navbar-text-color; 
+    font-family: $navbar-font-family;
+    font-size: 22px;
+}
+
+.navbar-nav .nav-link {
+    font-family: $primary-font; 
+}
+
+
+
 // cta
 .custom-login {
     background-color: $login-color;
@@ -64,55 +61,54 @@
 }
 
 .custom-register {
-    background-color: transparent; /* Gjør knappen transparent */
-    border: 2px solid black; /* Legg til en svart kant */
-    color: black; /* Sett tekstfargen til svart */
+    background-color: transparent; 
+    border: 2px solid black; 
+    color: black; 
 }
 
 //login.html
 .container {
-    border: 2px solid #ddd; /* Tydeligere ramme */
-    border-radius: 12px; /* Avrundede hjørner */
-    padding: 30px; /* Økt innvendig avstand */
-    background-color: #fff; /* Hvit bakgrunn */
-    max-width: 500px; /* Økt bredde */
-    width: 100%; /* Responsiv bredde */
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Større skygge */
+    border: 2px solid #ddd; 
+    border-radius: 12px; 
+    padding: 30px; 
+    background-color: #fff; 
+    max-width: 500px; 
+    width: 100%; 
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); 
 }
 
 //registration
 .registration-box {
-    border: 2px solid #ddd; /* Ramme rundt boksen */
-    border-radius: 12px; /* Avrundede hjørner */
-    padding: 30px; /* Innvendig avstand */
-    background-color: #fff; /* Hvit bakgrunn */
-    max-width: 500px; /* Maks bredde for boksen */
-    width: 100%; /* Responsiv bredde */
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Skygge for dybde */
+    border: 2px solid #ddd; 
+    border-radius: 12px; 
+    padding: 30px; 
+    background-color: #fff; 
+    max-width: 500px; 
+    width: 100%; 
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); 
 }
-
 
 //feed.html
 .profile-picture {
-    width: 100%;           // Fyller opp 100% av bredden på sin container
-    max-width: 150px;     // Sett maksimal bredde til 100px
-    height: auto;         // Høyden tilpasser seg automatisk
-    aspect-ratio: 1;      // Sikrer at bildet holder en 1:1 forhold (rundt) 
-    object-fit: cover;     // Fyller opp plassen uten å forvrenge
+    width: 100%;          
+    max-width: 150px;     
+    height: auto;         
+    aspect-ratio: 1;      
+    object-fit: cover;     
 }
 
 //profile img
 .cta-profile {
-    background-color: $button-color; // Setter bakgrunnsfargen til knappen
-    color: white; // Setter teksten til hvit
-    border: none; // Fjerner kantlinjen
-    padding: 10px 20px; // Legg til padding for å gi knappen mer størrelse
-    border-radius: 5px; // Legger til avrunding på hjørnene
-    font-size: 16px; // Setter fontstørrelsen
+    background-color: $button-color; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-size: 16px; 
 
     &:hover {
-        background-color: $button-hover-color; // Endrer bakgrunnsfargen ved hover
-        color: white; // Behold teksten hvit ved hover
+        background-color: $button-hover-color; 
+        color: white; 
     }
 }
 
@@ -126,51 +122,50 @@
     font-size: 1.2rem;  
 }
 
-// Styling for Create Post-knappen
+// Styling for the Create Post button
 .create-post-btn,
 .view-details-btn {
-    background-color: $button-color; // Bruk fargen fra variabelen
-    color: white; // Sett teksten til hvit
-    border: none; // Fjern kantlinje
-    padding: 10px 20px; // Legg til padding for å gjøre knappen mer synlig
-    border-radius: 5px; // Avrunde hjørnene
-    font-size: 16px; // Juster tekststørrelsen
-    font-family: $primary-font; // Bruk primærfonten
+    background-color: $button-color; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    font-family: $primary-font; 
 
     &:hover {
-        background-color: $button-hover-color; // Endre bakgrunnsfargen ved hover
-        color: white; // Hold teksten hvit ved hover
-        text-decoration: none; // Fjern eventuell tekstunderstrekning
+        background-color: $button-hover-color; 
+        color: white; 
+        text-decoration: none; 
     }
 
     &:focus {
-        outline: none; // Fjern fokusrammen (valgfritt)
-        box-shadow: 0 0 0 3px lighten($button-hover-color, 20%); // Legg til en myk skygge rundt knappen
+        outline: none; 
+        box-shadow: 0 0 0 3px lighten($button-hover-color, 20%); 
     }
 }
-
 
 //images feed
 .list-group-item {
     display: flex;
-    align-items: center; // Justerer innholdet vertikalt
-    min-height: 100px; // Minimum høyde på kontaineren
+    align-items: center; 
+    min-height: 100px; 
 }
 
 .image-size {
-    width: 100px;      // Sett bredden til ønsket størrelse
-    height: auto;      // Høyden vil bli proporsjonal basert på bredden
-    border-radius: 0;  // Ingen avrunding
-    object-fit: cover;  // Fyller opp plassen uten å forvrenge
+    width: 100px;      
+    height: auto;      
+    border-radius: 0;  
+    object-fit: cover;  
 }
 
 //post-detail.html
 .post-image {
-    width: 100%;              /* Bildet fyller 100% av sin container */
-    max-width: 515px;         /* Sett en maks bredde for bildet */
-    height: auto;             /* Høyden tilpasser seg automatisk */
-    padding: 20px;            /* Legg til padding for å skape avstand */
-    box-sizing: border-box;   /* Inkluder padding i total bredde */
+    width: 100%;              
+    max-width: 515px;         
+    height: auto;             
+    padding: 20px;            
+    box-sizing: border-box;   
 }
 
 /* Styling for Post Comment-knappen */
@@ -190,16 +185,17 @@
 
 // Loader styling
 .spinner-overlay {
-    position: absolute; /* Ikke dekker hele skjermen */
-    width: auto; /* Kun så stor som nødvendig */
-    height: auto; /* Kun så høy som nødvendig */
-    background-color: transparent; /* Ingen bakgrunn */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); // Mørk bakgrunn med gjennomsiktighet
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-}
-
+  }
   
   .spinner {
     width: 50px;
@@ -225,20 +221,19 @@
     text-align: center;
   
     p {
-      color: #dc3545; // Bootstrap sin røde farge
+      color: #dc3545; 
       font-size: 1.2rem;
       margin: 0;
     }
   }
   
-
 // Footer
 footer {
     background-color: $footer-background-color;
     color: $footer-text-color;
 
     a {
-        color: $footer-text-color; // Farge for linker i footeren
+        color: $footer-text-color; 
     } 
 }
 
@@ -249,14 +244,14 @@ footer {
     }
 
     .lead {
-        font-size: 1.22rem; /* Endrer skriftstørrelse for lead */
+        font-size: 1.22rem; 
     }
 }
 
-// @media for 768px og nedover
+// @media for 768px and below
 @media (max-width: 768px) {
     .image-size {
-        width: 100%; // Tar opp 100% av bredden på små skjermer
+        width: 100%; 
     }
 }
 

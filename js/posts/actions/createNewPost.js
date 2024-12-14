@@ -1,16 +1,15 @@
 import { POSTS_ENDPOINT, API_KEY } from '../../config/constants.js';
 import { retrieveFromLocalStorage } from '../../utilities/localStorage.js';
-
 /**
- * Funksjon for å opprette et nytt innlegg.
+ * Function to create a new post
  */
 export async function createNewPost(postData) {
-  console.log("Starter oppretting av innlegg...");
+  console.log("Starting post creation...");
 
   const token = retrieveFromLocalStorage('accessToken');
   if (!token) {
-    console.error("Brukeren er ikke logget inn.");
-    throw new Error("Du må være innlogget for å opprette et innlegg.");
+    console.error("The user is not logged in.");
+    throw new Error("You must be logged in to create a post.");
   }
 
   const response = await fetch(POSTS_ENDPOINT, {
@@ -24,11 +23,11 @@ export async function createNewPost(postData) {
   });
 
   if (!response.ok) {
-    console.error("Kunne ikke opprette innlegget:", response.status);
-    throw new Error("Kunne ikke opprette innlegget.");
+    console.error("Could not create the post:", response.status);
+    throw new Error("Could not create the post.");
   }
 
   const responseData = await response.json();
-  console.log("Innlegg opprettet:", responseData);
+  console.log("Post created:", responseData);
   return responseData;
 }

@@ -1,17 +1,16 @@
 import { updatePost } from './updatePost.js';
 import { deletePost } from './deletePost.js';
-
 /**
- * Håndterer oppdatering og sletting av innlegg.
- * @param {string} postId - ID for det aktuelle innlegget.
+ * Handling post update and deletion.
+ * @param {string} postId - ID of the current post.
  */
 export function setupPostActions(postId) {
-  console.log(`Initialiserer oppdatering og sletting for innlegg med ID: ${postId}`);
+  console.log(`Initializing update and deletion for the post with ID: ${postId}`);
 
   const editForm = document.getElementById('edit-post-form');
   const deleteButton = document.getElementById('delete-post-button');
 
-  // Håndter oppdatering av innlegg
+ // Handle post update
   editForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
@@ -21,28 +20,28 @@ export function setupPostActions(postId) {
     };
 
     try {
-      console.log("Sender oppdateringsdata til API:", updatedData);
+      console.log("Sending update data to the API:", updatedData);
       await updatePost(postId, updatedData);
-      alert("Innlegget ble oppdatert!");
-      window.location.reload(); // Oppdater siden for å vise endringene
+      alert("The post has been updated!");
+      window.location.reload(); // Refresh the page to display the changes
     } catch (error) {
-      console.error("Feil ved oppdatering av innlegg:", error);
-      alert("Kunne ikke oppdatere innlegget. Prøv igjen.");
+      console.error("Error while updating the post:", error);
+      alert("Could not update the post. Please try again.");
     }
   });
 
-  // Håndter sletting av innlegg
+  // Handle post deletion
   deleteButton.addEventListener('click', async () => {
-    const confirmDelete = confirm("Er du sikker på at du vil slette dette innlegget?");
+    const confirmDelete = confirm("Are you sure you want to delete this post?");
     if (!confirmDelete) return;
 
     try {
       await deletePost(postId);
-      alert("Innlegget ble slettet!");
-      window.location.href = '/pages/feed/feed.html'; // Tilbake til feed-siden
+      alert("The post has been deleted!");
+      window.location.href = '/pages/feed/feed.html'; 
     } catch (error) {
-      console.error("Feil ved sletting av innlegg:", error);
-      alert("Kunne ikke slette innlegget. Prøv igjen.");
+      console.error("Error while deleting the post:", error);
+      alert("Could not delete the post. Please try again.");
     }
   });
 }

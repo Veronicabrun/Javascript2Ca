@@ -2,8 +2,8 @@ import { API_BASE_URL, API_KEY } from '../../config/constants.js';
 import { retrieveFromLocalStorage } from '../../utilities/localStorage.js';
 
 /**
- * Henter innleggene til den innloggede brukeren fra Noroff API.
- * @returns {Promise<Array>} - Liste over brukerens innlegg.
+ * Fetching the posts of the logged-in user from the Noroff API.
+ * @returns {Promise<Array>} - List of the user's posts.
  */
 export async function getUserPosts() {
   const token = retrieveFromLocalStorage('accessToken');
@@ -11,7 +11,7 @@ export async function getUserPosts() {
   
 
   if (!token || !username) {
-    throw new Error('Du må være innlogget for å hente innlegg.');
+    throw new Error('You must be logged in to fetch posts.');
   }
 
   try {
@@ -23,13 +23,13 @@ export async function getUserPosts() {
     });
 
     if (!response.ok) {
-      throw new Error(`Kunne ikke hente innlegg for profilen ${username}.`);
+      throw new Error(`Could not fetch posts for the profile ${username}.`);
     }
 
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('Feil ved henting av innlegg:', error);
+    console.error('Error while fetching posts:', error);
     throw error;
   }
 }

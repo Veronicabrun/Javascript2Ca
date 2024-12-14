@@ -1,5 +1,5 @@
 export function showLoadingIndicator() {
-    console.log('Viser ladeindikator');
+    console.log('Displaying loading indicator');
     const loader = document.createElement('div');
     loader.id = 'loading-indicator';
     loader.innerHTML = `
@@ -8,11 +8,11 @@ export function showLoadingIndicator() {
       </div>
     `;
     document.body.appendChild(loader);
-    console.log("Ladeindikatoren ble lagt til DOM");
+    console.log("The loading indicator was added to the DOM");
   }
   
   export function hideLoadingIndicator() {
-    console.log('Skjuler ladeindikator');
+    console.log('Hiding loading indicator');
     const loader = document.getElementById('loading-indicator');
     if (loader) {
       document.body.removeChild(loader);

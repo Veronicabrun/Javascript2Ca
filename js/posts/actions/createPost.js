@@ -2,18 +2,18 @@ import { POSTS_ENDPOINT, API_KEY } from '../../config/constants.js';
 import { retrieveFromLocalStorage } from '../../utilities/localStorage.js';
 
 export async function createPost(postData) {
-  console.log("Starter createPost-funksjonen");
+  console.log("Starting the createPost function");
   const token = retrieveFromLocalStorage('accessToken');
 
-  console.log("Token hentet fra localStorage:", token);
+  console.log("Token retrieved from localStorage:", token);
 
   if (!token) {
-    console.error("Ingen token funnet. Brukeren er ikke innlogget.");
-    throw new Error('Du må være innlogget for å opprette innlegg.');
+    console.error("No token found. The user is not logged in.");
+    throw new Error('You must be logged in to create posts.');
   }
 
   try {
-    console.log("Sender innlegg til API med data:", postData);
+    console.log("Sending post to the API with data:", postData);
     const response = await fetch(POSTS_ENDPOINT, {
       method: 'POST',
       headers: {
@@ -24,18 +24,18 @@ export async function createPost(postData) {
       body: JSON.stringify(postData),
     });
 
-    console.log("Responsstatus fra API:", response.status);
+    console.log("Response status from the API:", response.status);
 
     const responseData = await response.json();
-    console.log("Responsdata fra API:", responseData);
+    console.log("Response status from the API:", responseData);
 
     if (!response.ok) {
-      throw new Error(`Kunne ikke opprette innlegg: ${responseData.errors ? responseData.errors[0]?.message : "Ukjent feil"}`);
+      throw new Error(`Could not create the post: ${responseData.errors ? responseData.errors[0]?.message : "Unknown error"}`);
     }
 
     return responseData;
   } catch (error) {
-    console.error("Feil ved oppretting av innlegg:", error);
+    console.error("Error while creating the post:", error);
     throw error;
   }
 }
