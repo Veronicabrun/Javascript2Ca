@@ -11890,6 +11890,19 @@ html, body {
   font-family: "Montserrat", sans-serif;
 }
 
+#logout-button {
+  background-color: #8A4642;
+  color: white;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#logout-button:hover {
+  background-color: #E0CDC6;
+}
+
 .custom-login {
   background-color: #8A4642;
   color: white;

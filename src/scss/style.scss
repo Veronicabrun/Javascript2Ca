@@ -52,6 +52,20 @@
     font-family: $primary-font; 
 }
 
+#logout-button {
+    background-color: $button-color; 
+    color: white;                       
+    border: none;                     
+    font-family: $primary-font;         
+    padding: 10px 20px;                 
+    border-radius: 5px;                 
+    cursor: pointer;                   
+
+    &:hover {
+        background-color: $button-hover-color;  
+    }
+}
+
 
 
 // cta
