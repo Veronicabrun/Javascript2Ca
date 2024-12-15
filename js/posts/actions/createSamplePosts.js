@@ -6,7 +6,7 @@ const examplePosts = [
     body: "En yoga-sekvens som varmer opp kroppen.",
     media: {
       url: "https://images.pexels.com/photos/4534660/pexels-photo-4534660.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Person practicing Sun Salutation yoga pose.",
+      alt: "A woman practicing an exercise where she is standing on her head.",
     },
     tags: ["yoga", "fitness"],
   },
@@ -15,7 +15,7 @@ const examplePosts = [
     body: "Styrker bena og åpner hoftene.",
     media: {
       url: "https://images.pexels.com/photos/4534594/pexels-photo-4534594.jpeg",
-      alt: "Person practicing Warrior Pose yoga pose.",
+      alt: "A woman practicing an exercise on one leg with one hand on the ground.",
     },
     tags: ["yoga", "strength"],
   },

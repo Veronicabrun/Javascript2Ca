@@ -1,14 +1,4 @@
-//API KEY
-//05e991e0-643b-41bd-b4a7-701ca4ae441f
-//const options = {
-    //headers: {
-      //'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidmVyb2JwIiwiZW1haWwiOiJ2ZXJvbmljYV9icEBzdHVkLm5vcm9mZi5ubyIsImlhdCI6MTcyOTcxNjMzNH0.x__H2KXJytfJtTU-305ehsrzzNgVAHFrOr3yoCfuSdU',
-      //'X-Noroff-API-Key': '05e991e0-643b-41bd-b4a7-701ca4ae441f'
-    //}
-  //};
-
- // Handles API calls for login and registration
-
+// Handles API calls for login and registration
  import { LOGIN_ENDPOINT, REGISTER_ENDPOINT } from '../config/constants.js';
  import { storeInLocalStorage } from '../utilities/localStorage.js';
  import { API_KEY } from '../config/constants.js';
@@ -20,7 +10,7 @@
  * @returns {Promise<void>} 
  * @example
  * // Usage example:
- * loginUser('john.doe@stud.noroff.no', 'securePassword123')
+ * loginUser('test123@stud.noroff.no', 'testPassword123')
  *     .then(() => console.log('User logged in successfully'))
  *     .catch(error => console.error('Login error:', error));
  */

@@ -15,5 +15,5 @@ export async function getPostById(postId) {
   if (!response.ok) throw new Error(`Could not fetch post with ID: ${postId}`);
 
   const data = await response.json();
-  return data; // Returns the details of the post
+  return data; 
 }
