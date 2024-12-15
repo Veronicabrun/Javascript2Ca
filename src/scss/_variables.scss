@@ -1,0 +1,21 @@
+// _variables.scss
+$navbar-background-color: #E0CDC6; 
+$footer-background-color: #E0CDC6;  
+$navbar-text-color: #8A4642;        
+$footer-text-color: #8A4642;        
+$navbar-font-family: 'Playfair Display', serif; 
+$primary-font: 'Montserrat', sans-serif;        
+$heading-font: 'Playfair Display', serif;      
+$heading-font-weight: 600;                     
+$login-color: #8A4642;
+$like-icon-color: #8A4642; 
+$comment-icon-color: #E0CDC6; 
+$button-color: #8A4642; 
+$button-hover-color: #E0CDC6;
+$comment-btn-color: #E0CDC6;           
+$edit-btn-color: #C9B8B2;              
+$delete-btn-color: #8A4642;            
+/* Hover colors */
+$comment-btn-hover-color: darken($comment-btn-color, 10%);  
+$edit-btn-hover-color: darken($edit-btn-color, 10%);        
+$delete-btn-hover-color: darken($delete-btn-color, 10%);    

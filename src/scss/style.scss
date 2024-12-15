@@ -1,0 +1,281 @@
+// Import variables
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "mixins.scss";
+
+/* Custom CSS */
+ html, body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+ .full-height {
+    height: auto;
+}
+
+.img-cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+// Navbar
+.navbar {
+    background-color: $navbar-background-color;
+
+    .navbar-nav .nav-link {
+        color: $navbar-text-color; 
+        font-family: $navbar-font-family; 
+        font-size: 18px;
+
+        &:hover {
+            color: $navbar-text-color; 
+            text-decoration: underline; 
+        }
+
+        &.active {
+            font-weight: bold; 
+        }
+    }
+}
+
+.navbar-brand {
+    color: $navbar-text-color; 
+    font-family: $navbar-font-family;
+    font-size: 22px;
+}
+
+.navbar-nav .nav-link {
+    font-family: $primary-font; 
+}
+
+#logout-button {
+    background-color: $button-color; 
+    color: white;                       
+    border: none;                     
+    font-family: $primary-font;         
+    padding: 10px 20px;                 
+    border-radius: 5px;                 
+    cursor: pointer;                   
+
+    &:hover {
+        background-color: $button-hover-color;  
+    }
+}
+
+// cta
+.custom-login {
+    background-color: $login-color;
+    color: white;
+}
+
+.custom-register {
+    background-color: transparent; 
+    border: 2px solid black; 
+    color: black; 
+}
+
+//login page
+.container {
+    border: 2px solid #ddd; 
+    border-radius: 12px; 
+    padding: 30px; 
+    background-color: #fff; 
+    max-width: 500px; 
+    width: 100%; 
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); 
+}
+
+//Both login and register buttons in their respective modals 
+#loginModal .btn-primary, #registerModal .btn-primary {
+    background-color: #8A4642; 
+    border-color: #8A4642; 
+  }
+  
+  //Hover effect for both login and register buttons 
+  #loginModal .btn-primary:hover, #registerModal .btn-primary:hover {
+    background-color: #C9B8B2; 
+    border-color: #C9B8B2; 
+  }
+  
+//registration
+.registration-box {
+    border: 2px solid #ddd; 
+    border-radius: 12px; 
+    padding: 30px; 
+    background-color: #fff; 
+    max-width: 500px; 
+    width: 100%; 
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); 
+}
+
+//feed page
+.profile-picture {
+    width: 100%;          
+    max-width: 150px;     
+    height: auto;         
+    aspect-ratio: 1;      
+    object-fit: cover;     
+}
+
+//profile img
+.cta-profile {
+    background-color: $button-color; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-size: 16px; 
+
+    &:hover {
+        background-color: $button-hover-color; 
+        color: white; 
+    }
+}
+
+.bi-hand-thumbs-up {
+    color: $like-icon-color;
+    font-size: 1.2rem;  
+}
+
+.bi-chat-dots {
+    color: $comment-icon-color;
+    font-size: 1.2rem;  
+}
+
+// Styling for the Create Post button
+.create-post-btn,
+.view-details-btn {
+    background-color: $button-color; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    font-family: $primary-font; 
+
+    &:hover {
+        background-color: $button-hover-color; 
+        color: white; 
+        text-decoration: none; 
+    }
+
+    &:focus {
+        outline: none; 
+        box-shadow: 0 0 0 3px lighten($button-hover-color, 20%); 
+    }
+}
+
+//images feed
+.list-group-item {
+    display: flex;
+    align-items: center; 
+    min-height: 100px; 
+}
+
+.image-size {
+    width: 100px;      
+    height: auto;      
+    border-radius: 0;  
+    object-fit: cover;  
+}
+
+//post-detail.html
+.post-image {
+    width: 100%;              
+    max-width: 515px;         
+    height: auto;             
+    padding: 20px;            
+    box-sizing: border-box;   
+}
+
+/* Styling for Post Comment-knappen */
+.custom-comment-btn {
+    @include button-styling($comment-btn-color, $comment-btn-hover-color);
+}
+
+/* Styling for Edit Post-knappen */
+.custom-edit-btn {
+    @include button-styling($edit-btn-color, $edit-btn-hover-color);
+}
+
+/* Styling for Delete Post-knappen */
+.custom-delete-btn {
+    @include button-styling($delete-btn-color, $delete-btn-hover-color);
+}
+
+// Loader styling
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); // Mørk bakgrunn med gjennomsiktighet
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3; // Lys grå farge for bakgrunnen
+    border-top: 5px solid #E0CDC6; // Fargen for spinneren
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  //error styling
+  .error-container {
+    margin-top: 1rem;
+    text-align: center;
+  
+    p {
+      color: #dc3545; 
+      font-size: 1.2rem;
+      margin: 0;
+    }
+  }
+  
+// Footer
+footer {
+    background-color: $footer-background-color;
+    color: $footer-text-color;
+
+    a {
+        color: $footer-text-color; 
+    } 
+}
+
+//@media
+@media (max-width: 1311px) {
+    .display-4 {
+        font-size: 2.5rem; 
+    }
+
+    .lead {
+        font-size: 1.22rem; 
+    }
+}
+
+// @media for 768px and below
+@media (max-width: 768px) {
+    .image-size {
+        width: 100%; 
+    }
+}
+

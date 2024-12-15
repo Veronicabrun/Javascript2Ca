@@ -1,0 +1,11 @@
+# Node modules folder
+node_modules/
+
+# MacOS files
+.DS_Store
+
+# Logs
+*.log
+
+# Environment files
+.env
