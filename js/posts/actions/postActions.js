@@ -23,7 +23,7 @@ export function setupPostActions(postId) {
       console.log("Sending update data to the API:", updatedData);
       await updatePost(postId, updatedData);
       alert("The post has been updated!");
-      window.location.reload(); // Refresh the page to display the changes
+      window.location.reload(); 
     } catch (error) {
       console.error("Error while updating the post:", error);
       alert("Could not update the post. Please try again.");

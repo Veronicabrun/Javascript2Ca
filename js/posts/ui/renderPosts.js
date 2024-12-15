@@ -81,7 +81,7 @@ document.getElementById('search-input').addEventListener('input', async () => {
 
 document.getElementById('sort-select').addEventListener('change', async () => {
   const errorContainer = document.querySelector('.error-container');
-  errorContainer.innerHTML = ''; // Clear the error message container
+  errorContainer.innerHTML = ''; 
 
   showLoadingIndicator();
   try {
