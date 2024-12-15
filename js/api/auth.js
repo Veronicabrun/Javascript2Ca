@@ -2,7 +2,6 @@
  import { LOGIN_ENDPOINT, REGISTER_ENDPOINT } from '../config/constants.js';
  import { storeInLocalStorage } from '../utilities/localStorage.js';
  import { API_KEY } from '../config/constants.js';
- 
 /**
  * Logs in the user.
  * @param {string} email - The user's email address.
@@ -14,7 +13,6 @@
  *     .then(() => console.log('User logged in successfully'))
  *     .catch(error => console.error('Login error:', error));
  */
-
  export async function loginUser(email, password) {
   try {
       console.log('Starting login for:', email);
@@ -36,7 +34,7 @@
       }
 
       // Retrieve token from the response (now from responseData.data.accessToken)
-      const token = responseData.data?.accessToken; // Navigating inside the data object
+      const token = responseData.data?.accessToken; 
       const username = responseData.data?.name; 
       if (!token) {
           throw new Error('Did not receive token from the API');

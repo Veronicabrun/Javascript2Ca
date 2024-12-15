@@ -20,8 +20,8 @@ export async function renderPosts() {
 
     // Loop through each post and display it on the page
     posts.forEach((post) => {
-      const mediaUrl = post.media?.url || ''; // Check that the media object exists
-      const mediaAlt = post.title || 'Bilde'; // Use the title as a fallback for alt text
+      const mediaUrl = post.media?.url || ''; 
+      const mediaAlt = post.title || 'Bilde'; 
 
       const imageHTML = mediaUrl
         ? `<img src="${mediaUrl}" alt="${mediaAlt}" class="me-3 mt-2 mb-2 image-size">`
