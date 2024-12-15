@@ -91,13 +91,13 @@
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); 
 }
 
-/* Both login and register buttons in their respective modals */
+//Both login and register buttons in their respective modals 
 #loginModal .btn-primary, #registerModal .btn-primary {
     background-color: #8A4642; 
     border-color: #8A4642; 
   }
   
-  /* Hover effect for both login and register buttons */
+  //Hover effect for both login and register buttons 
   #loginModal .btn-primary:hover, #registerModal .btn-primary:hover {
     background-color: #C9B8B2; 
     border-color: #C9B8B2; 
