@@ -18,4 +18,4 @@ UnityYoga is a front-end project for a social media application that allows user
 - **JavaScript**: For interactivity and dynamic content.
 - **Bootstrap**: For responsive design and UI components.
 - **Font Awesome / Bootstrap Icons**: For icons.
-- **Noroff API**: For fetching and manipulating data related to yoga posts.
+- **Noroff API**: For fetching data.
