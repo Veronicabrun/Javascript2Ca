@@ -15,6 +15,6 @@ document.querySelector('#login-form').addEventListener('submit', async (event) =
         console.log('The user is logged in!'); 
     } catch (error) {
         console.error('Login failed:', error); 
-        document.querySelector('#error').textContent = 'Login failed. Please check your credentials.';
+        document.querySelector('#login-error').textContent = 'Login failed. Please check your credentials.';
     }
 });

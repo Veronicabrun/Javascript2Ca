@@ -15,7 +15,7 @@ document.querySelector('#registration-form').addEventListener('submit', async (e
         await registerUser(userData);
         console.log('Registration complete. The user is logged in and redirected to the feed page.');
     } catch (error) {
-        document.querySelector('#error').textContent = 'Registration failed. Please check your inputs.';
+        document.querySelector('#register-error').textContent = 'Registration failed. Please check your inputs.';
         console.error('Registration failed:', error);
     }
 });
